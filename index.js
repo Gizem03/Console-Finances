@@ -89,6 +89,21 @@ var finances = [
 
 console.log(finances.length);
 
+var sum = 0;
+
+var max = 0;
+
+var min = 0;
+
 for (var i = 0; i < finances.length; i++) {
-  console.log(finances[i]);
+  var thismonth = finances[i][1];
+  sum = sum + thismonth;
+  if (thismonth > max) {
+    max = thismonth;
+  }
+  if (thismonth < min) {
+    min = thismonth;
+  }
 }
+
+console.log(sum, max, min);
