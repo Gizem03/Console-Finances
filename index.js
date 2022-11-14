@@ -95,15 +95,33 @@ var max = 0;
 
 var min = 0;
 
+var minMonth;
+
+var maxMonth;
+
 for (var i = 0; i < finances.length; i++) {
-  var thismonth = finances[i][1];
-  sum = sum + thismonth;
-  if (thismonth > max) {
-    max = thismonth;
+  var profit = finances[i][1];
+  sum = sum + profit;
+  if (profit > max) {
+    max = profit;
+    maxMonth = finances[i][0];
   }
-  if (thismonth < min) {
-    min = thismonth;
+  if (profit < min) {
+    min = profit;
+    minMonth = finances[i][0];
   }
 }
 
-console.log(sum, max, min);
+console.log(sum, max, maxMonth, min, minMonth);
+
+console.log("Financial Analysis");
+
+console.log("------------------------");
+
+console.log("Total Months: " + finances.length);
+
+console.log("Total: " + "$" + sum);
+
+console.log("Greatest Increase in Profits: " + maxMonth + " ($" + max + ")");
+
+console.log("Greatest Decrease in Profits: " + minMonth + " ($" + min + ")");
