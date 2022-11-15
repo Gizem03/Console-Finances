@@ -87,8 +87,6 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-console.log(finances.length);
-
 var sum = 0;
 
 var max = 0;
@@ -101,6 +99,8 @@ var maxMonth;
 
 for (var i = 0; i < finances.length; i++) {
   var profit = finances[i][1];
+  var prevMonth = finances[i - 1][1];
+  var diff = profit - prevMonth;
   sum = sum + profit;
   if (profit > max) {
     max = profit;
@@ -111,8 +111,6 @@ for (var i = 0; i < finances.length; i++) {
     minMonth = finances[i][0];
   }
 }
-
-console.log(sum, max, maxMonth, min, minMonth);
 
 console.log("Financial Analysis");
 
