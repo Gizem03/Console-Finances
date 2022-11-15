@@ -99,8 +99,7 @@ var maxMonth;
 
 for (var i = 0; i < finances.length; i++) {
   var profit = finances[i][1];
-  var prevMonth = finances[i - 1][1];
-  var diff = profit - prevMonth;
+
   sum = sum + profit;
   if (profit > max) {
     max = profit;
